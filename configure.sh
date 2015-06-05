@@ -192,7 +192,7 @@ fi
 
 ############ ICU libraries ###############################
 
-if [ "$check" = "1" -a "$compiler" = "Clang" -a "$platform" = "linux" ];
+if [ "$check" = "1" -a "$BuildExtraCXXLibraries" = "yes" ];
 then
   source scripts/install_icu.sh 
 fi
@@ -237,7 +237,7 @@ fi
 
 ############ Mesa libraries ###############################
 
-if [ "$check" = "1" -a "$compiler" = "Clang" -a "$platform" = "linux" ];
+if [ "$check" = "1" -a "$BuildExtraCXXLibraries" = "yes" ];
 then
   source scripts/install_mesa.sh 
 fi

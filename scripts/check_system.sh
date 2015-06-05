@@ -414,6 +414,16 @@ hascxx11=$(grep HasCxx11 $SIMPATH/test/configure | cut -f2 -d:)
 haslibcxx=$(grep HasLibCxx $SIMPATH/test/configure | cut -f2 -d:)
 _hascurl=$(grep HasCurl $SIMPATH/test/configure | cut -f2 -d:)
 
+set -xv
+_BuildExtraCXXLibraries=$(grep BuildExtraCXXLibraries $SIMPATH/test/configure | cut -f2 -d:)
+
+if [ ${_BuildExtraCXXLibraries} ];
+then
+  export BuildExtraCXXLibraries=yes
+else
+  export BuildExtraCXXLibraries=no
+fi
+set +xv
 
 if [ ${_hascurl} ];
 then

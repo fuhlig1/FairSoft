@@ -38,7 +38,7 @@ then
     mypatch ../${GEANT4VERSION}_c++11.patch | tee -a $logfile
   fi
 
-  if [ "$platform" = "linux" -a "$compiler" = "Clang" ]; then
+  if [ "$BuildExtraCXXLibraries" = "true" ]; then
     mypatch ../geant4.10.00_clang_linux.patch
   fi
 

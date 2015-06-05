@@ -43,7 +43,7 @@ then
     elif [ "$compiler" = "Clang" ];
     then
       toolset=clang
-      if [ "$platform" = "linux" ]; then
+      if [ "$BuildExtraCXXLibraries" = "true" ]; then
         _icu_path="-sICU_PATH=$install_prefix"
       fi
     elif [ "$compiler" = "gcc" ];

@@ -35,20 +35,20 @@
 
    fi
    #######################################################
-
+set -xv
    OPENGL=" "
    if [ "$compiler" = "Clang" ]; then
      root_comp_flag="--with-clang"
      if [ $haslibcxx ]; then
        root_comp_flag="--with-clang --enable-cxx11 --enable-libcxx"
      fi
-     if [ "$platform" = "linux" ]; then
+     if [ "$BuildExtraCXXLibraries" = "true" ]; then
        OPENGL="--with-opengl-incdir=$SIMPATH_INSTALL/include --with-opengl-libdir=$SIMPATH_INSTALL/lib"
      fi
    else
      root_comp_flag="--with-cc=$CC --with-cxx=$CXX --with-ld=$CXX"   
    fi
-
+set +xv
    if [ "$build_python" = "yes" ];
    then
       PYTHONBUILD="--enable-python"
