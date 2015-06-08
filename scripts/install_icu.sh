@@ -14,7 +14,11 @@ fi
 
 install_prefix=$SIMPATH_INSTALL
 
-checkfile=$install_prefix/lib/libicuuc.so.53.1
+if [ "$platform" = "macosx" ]; then
+  checkfile=$install_prefix/lib/libicuuc.53.1.dylib
+else
+  checkfile=$install_prefix/lib/libicuuc.so.53.1
+fi
 
 if (not_there icu $checkfile);
 then

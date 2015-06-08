@@ -81,7 +81,7 @@ set +xv
 		    --with-pythia8-libdir=$pythia8_libdir \
 		    --with-pythia8-incdir=$pythia8_incdir \
 		    --enable-mysql --enable-pgsql \
-                    --disable-globus \
+                    --disable-globus --disable-cocoa \
                     --disable-reflex \
                     --disable-cintex \
                     $VCBUILD --enable-http \

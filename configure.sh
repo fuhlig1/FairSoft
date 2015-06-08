@@ -237,10 +237,11 @@ fi
 
 ############ Mesa libraries ###############################
 
-if [ "$check" = "1" -a "$BuildExtraCXXLibraries" = "yes" ];
-then
-  source scripts/install_mesa.sh 
-fi
+#if [ "$check" = "1" -a "$BuildExtraCXXLibraries" = "yes" ];
+#then
+#  source scripts/install_mesa.sh 
+#fi
+#exit
 
 ##################### GEANT 4 #############################################
 
