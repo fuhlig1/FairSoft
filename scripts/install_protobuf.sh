@@ -26,8 +26,8 @@ then
 
     if [ $isMacOsx108 ]; then
       export LIBS="-lc++"
-    fi  
-    
+    fi
+
     ./configure --prefix=$install_prefix
 
     make -j$number_of_processes
