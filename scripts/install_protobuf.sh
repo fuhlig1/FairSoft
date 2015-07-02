@@ -25,7 +25,7 @@ then
     cd $SIMPATH/basics/protobuf
 
     if [ $isMacOsx108 ]; then
-      LIBS="-lc++"
+      export LIBS="-lc++"
     fi  
     
     ./configure --prefix=$install_prefix
@@ -39,6 +39,7 @@ then
     check_success protobuf $checkfile
     check=$?
 
+    unset LIBS
 fi
 
 cd $SIMPATH

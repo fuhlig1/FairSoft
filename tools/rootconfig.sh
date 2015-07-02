@@ -36,12 +36,9 @@
 
    fi
 
-set -xv
    if [ $isMacOsx108 ]; then
      XROOTD="-Dxrootd=OFF"
    fi  
-set +xv
-exit
    #######################################################
 
    OPENGL=" "
