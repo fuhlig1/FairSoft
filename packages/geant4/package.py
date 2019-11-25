@@ -157,7 +157,7 @@ class Geant4(CMakePackage):
             dirs = glob.glob('%s/%s/*' %
                              (spec['geant4-data'].prefix.share, linkdir))
             for d in dirs:
-                os.symlink(d, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datadir)), os.path.basename(d))
 
     def setup_dependent_environment(self, spack_env, run_env, dep_spec):
         version = self.version
