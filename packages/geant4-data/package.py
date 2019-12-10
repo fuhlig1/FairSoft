@@ -18,12 +18,6 @@ class Geant4Data(Package):
     version('10.04', 'c49194b96e65ed4527d34d22a9860972', expand=False)
     version('10.03', '2248ad436613897d9fad93bdb99d9446', expand=False)
 
-#    version('10.05.p01', 'd43b9cc4418afe67a7b444727810827a', expand=False)
-#    version('10.04.p03', 'c49194b96e65ed4527d34d22a9860972', expand=False)
-#    version('10.04.p01', 'c49194b96e65ed4527d34d22a9860972', expand=False)
-#    version('10.04.p00', 'c49194b96e65ed4527d34d22a9860972', expand=False)
-#    version('10.03.p03', '2248ad436613897d9fad93bdb99d9446', expand=False)
-
     # geant4@10.03
     depends_on("g4abla@3.0", when='@10.03')
     depends_on("g4emlow@6.50", when='@10.03')
@@ -62,67 +56,10 @@ class Geant4Data(Package):
     depends_on("g4realsurface@2.1.1", when='@10.05')
     depends_on("g4tendl@1.3.2", when='@10.05')
 
-    # geant4@10.03.p03
-#    depends_on("g4abla@3.0", when='@10.03.p03 ')
-#    depends_on("g4emlow@6.50", when='@10.03.p03 ')
-#    depends_on("g4ndl@4.5", when='@10.03.p03 ')
-#    depends_on("g4neutronxs@1.4", when='@10.03.p03 ')
-#    depends_on("g4saiddata@1.1", when='@10.03.p03 ')
-#    depends_on("g4ensdfstate@2.1", when='@10.03.p03 ')
-#    depends_on("g4photonevaporation@4.3.2", when='@10.03.p03 ')
-#    depends_on("g4pii@1.3", when='@10.03.p03 ')
-#    depends_on("g4radioactivedecay@5.1.1", when='@10.03.p03 ')
-#    depends_on("g4realsurface@1.0", when='@10.03.p03 ')
-#    depends_on("g4tendl@1.3", when='@10.03.p03 ')
-    # geant4@10.04
-#    depends_on("g4abla@3.1", when='@10.04 ')
-#    depends_on("g4emlow@7.3", when='@10.04 ')
-#    depends_on("g4ndl@4.5", when='@10.04 ')
-#    depends_on("g4neutronxs@1.4", when='@10.04 ')
-#    depends_on("g4saiddata@1.1", when='@10.04 ')
-#    depends_on("g4ensdfstate@2.2", when='@10.04 ')
-#    depends_on("g4photonevaporation@5.2", when='@10.04 ')
-#    depends_on("g4pii@1.3", when='@10.04 ')
-#    depends_on("g4radioactivedecay@5.2", when='@10.04 ')
-#    depends_on("g4realsurface@2.1", when='@10.04 ')
-#    depends_on("g4tendl@1.3.2", when='@10.04 ')
-    # geant4@10.04.p01
-#    depends_on("g4abla@3.1", when='@10.04.p01')
-#    depends_on("g4emlow@7.3", when='@10.04.p01')
-#    depends_on("g4ndl@4.5", when='@10.04.p01')
-#    depends_on("g4neutronxs@1.4", when='@10.04.p01')
-#    depends_on("g4saiddata@1.1", when='@10.04.p01')
-#    depends_on("g4ensdfstate@2.2", when='@10.04.p01')
-#    depends_on("g4photonevaporation@5.2", when='@10.04.p01')
-#    depends_on("g4pii@1.3", when='@10.04.p01')
-#    depends_on("g4radioactivedecay@5.2", when='@10.04.p01')
-#    depends_on("g4realsurface@2.1", when='@10.04.p01')
-#    depends_on("g4tendl@1.3.2", when='@10.04.p01')
-    # geant4@10.04.p03
-#    depends_on("g4abla@3.1", when='@10.04.p03')
-#    depends_on("g4emlow@7.3", when='@10.04.p03')
-#    depends_on("g4ndl@4.5", when='@10.04.p03')
-#    depends_on("g4neutronxs@1.4", when='@10.04.p03')
-#    depends_on("g4saiddata@1.1", when='@10.04.p03')
-#    depends_on("g4ensdfstate@2.2", when='@10.04.p03')
-#    depends_on("g4photonevaporation@5.2", when='@10.04.p03')
-#   depends_on("g4pii@1.3", when='@10.04.p03')
-#   depends_on("g4radioactivedecay@5.2", when='@10.04.p03')
-#   depends_on("g4realsurface@2.1", when='@10.04.p03')
-#    depends_on("g4tendl@1.3.2", when='@10.04.p03')
-    # geant4@10.05.p01
-#    depends_on("g4ndl@4.5", when='@10.05.p01')
-#    depends_on("g4emlow@7.7", when='@10.05.p01')
-#    depends_on("g4photonevaporation@5.3", when='@10.05.p01')
-#    depends_on("g4radioactivedecay@5.3", when='@10.05.p01')
-#    depends_on("g4saiddata@2.0", when='@10.05.p01')
-#    depends_on("g4particlexs@1.1", when='@10.05.p01')
-#    depends_on("g4abla@3.1", when='@10.05.p01')
-#    depends_on("g4incl@1.0", when='@10.05.p01')
-#    depends_on("g4pii@1.3", when='@10.05.p01')
-#    depends_on("g4ensdfstate@2.2", when='@10.05.p01')
-#    depends_on("g4realsurface@2.1.1", when='@10.05.p01')
-#    depends_on("g4tendl@1.3.2", when='@10.05.p01')
+
+#    def symlink_rel(src, dst):
+#        rel_path_src = os.path.relpath(src, os.path.dirname(dst))
+#        os.symlink(rel_path_src, dst)
 
     def install(self, spec, prefix):
         spec = self.spec
@@ -138,45 +75,58 @@ class Geant4Data(Package):
         with working_dir(datadir, create=True):
             for d in glob.glob('%s/share/data/*' %
                                spec['g4abla'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4emlow'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4ndl'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4saiddata'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4ensdfstate'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4photonevaporation'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4pii'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4radioactivedecay'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4realsurface'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             for d in glob.glob('%s/share/data/*' %
                                spec['g4tendl'].prefix):
-                os.symlink(d, os.path.basename(d))
+                datafile = join_path(datadir, os.path.basename(d))
+                os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             if minor < 5:
                 for d in glob.glob('%s/share/data/*' %
                                spec['g4neutronxs'].prefix):
-                    os.symlink(d, os.path.basename(d))
+                    datafile = join_path(datadir, os.path.basename(d))
+                    os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
             else:
                 for d in glob.glob('%s/share/data/*' %
                                spec['g4particlexs'].prefix):
-                    os.symlink(d, os.path.basename(d))
+                    datafile = join_path(datadir, os.path.basename(d))
+                    os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
                 for d in glob.glob('%s/share/data/*' %
                                spec['g4incl'].prefix):
-                    os.symlink(d, os.path.basename(d))
+                    datafile = join_path(datadir, os.path.basename(d))
+                    os.symlink(os.path.relpath(d, os.path.dirname(datafile)), os.path.basename(d))
 
     def url_for_version(self, version):
         """Handle version string."""
