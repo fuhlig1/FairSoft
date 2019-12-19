@@ -18,8 +18,8 @@ class Fairmq(CMakePackage):
 
     # Fix dependencies for FairMQ 1.2.3
     depends_on('googletest@1.7.0:', when='@1.2.3')
-    depends_on('googletest@1.8.1', when='@1.4.3')
-    depends_on('googletest@1.8.1', when='@dev')
+    depends_on('googletest@1.8.1:', when='@1.4.3')
+    depends_on('googletest@1.8.1:', when='@dev')
 
     depends_on('boost@1.67.0 cxxstd=11', when='@1.2.3')
     depends_on('boost@1.68.0 cxxstd=11 +container', when='@1.4.3')
