@@ -17,6 +17,7 @@ class Odc(CMakePackage):
     generator = 'Ninja'
 
     version('develop', branch='master', get_full_repo=True)
+    version('0.12', tag='0.12', commit='27cb98e261513f4e5e35e943e98aa60c99016901', no_cache=True)
     version('0.10', tag='0.10', commit='776855e3946c290b88e40060b032095e60f1fef3', no_cache=True)
 
     # See: https://github.com/FairRootGroup/ODC/commit/1618b38c12c9114268c9bce550e9e01e7015a040
@@ -26,7 +27,7 @@ class Odc(CMakePackage):
     conflicts('^boost@1.70:', when='^cmake@:3.14')
     depends_on('protobuf +shared')
     depends_on('grpc +codegen+shared')
-    depends_on('dds@3.5.3:')
+    depends_on('dds@3.5.4')
     depends_on('fairmq@1.4.26:')
     depends_on('fairlogger')
 
