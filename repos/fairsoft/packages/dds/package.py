@@ -20,6 +20,8 @@ class Dds(CMakePackage):
     maintainers = ['dennisklein', 'ChristianTackeGSI']
 
     version('develop', branch='master', get_full_repo=True)
+    version('3.5.8', tag='3.5.8', commit='fcb0ad1f0e74f18a067a8c1295ae159c7f8a7b68', no_cache=True)
+    version('3.5.7', tag='3.5.7', commit='a2aad21ed019a7b7ae064af3f1f9d89e984d19fb', no_cache=True)
     version('3.5.4', tag='3.5.4', commit='892e68d5acf07f6dd5877f0c8b1c84bd6bb40bda', no_cache=True)
     version('3.5.3', commit='f1eae89fdff266be86ec962c19e1c7930baf002c', no_cache=True)
     version('3.5.2', tag='3.5.2', commit='0813fd5772d1836c055370f4f16d46c961aa0d19', no_cache=True)
@@ -38,12 +40,12 @@ class Dds(CMakePackage):
     patch('fix_wn_bin_3.0.patch', when='@3.0')
     patch('fix_wn_bin_3.2_3.5.2.patch', when='@3.2:3.5.2')
     patch('fix_wn_bin_3.5.3.patch', when='@3.5.3')
-    patch('fix_wn_bin_3.5.4.patch', when='@3.5.4')
+    patch('fix_wn_bin_3.5.4.patch', when='@3.5.4:')
     patch('fix_wn_bin_master.patch', when='@develop')
     # TODO Upstream the wn_bin fix
     patch('fix_uuid_init.patch', when='@2.5-odc:3.0')
 
-    depends_on('boost@1.67:1.72 +shared+log+thread+program_options+filesystem+system+regex+test', when='@2.4:')
+    depends_on('boost@1.67:1.75 +shared+log+thread+program_options+filesystem+system+regex+test', when='@2.4:')
     # TODO No support for Boost 1.73, check if later releases will work
     # https://github.com/FairRootGroup/DDS/commit/e5b8ca86c46220238d130ac1f3f15dff32e85a2a
     # https://github.com/FairRootGroup/DDS/issues/305
