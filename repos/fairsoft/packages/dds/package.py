@@ -20,6 +20,7 @@ class Dds(CMakePackage):
     maintainers = ['dennisklein', 'ChristianTackeGSI']
 
     version('develop', branch='master', get_full_repo=True)
+    version('3.5.9', tag='3.5.9', commit='2868c2340f688b3045f2d6a73655b71b435bf6ab', no_cache=True)
     version('3.5.8', tag='3.5.8', commit='fcb0ad1f0e74f18a067a8c1295ae159c7f8a7b68', no_cache=True)
     version('3.5.7', tag='3.5.7', commit='a2aad21ed019a7b7ae064af3f1f9d89e984d19fb', no_cache=True)
     version('3.5.4', tag='3.5.4', commit='892e68d5acf07f6dd5877f0c8b1c84bd6bb40bda', no_cache=True)
@@ -46,6 +47,7 @@ class Dds(CMakePackage):
     patch('fix_uuid_init.patch', when='@2.5-odc:3.0')
 
     depends_on('boost@1.67:1.75 +shared+log+thread+program_options+filesystem+system+regex+test', when='@2.4:')
+#    depends_on('boost@1.67:1.75 +shared+log+thread+program_options+filesystem+system+regex+test cxxstd=17', when='@2.4:')
     # TODO No support for Boost 1.73, check if later releases will work
     # https://github.com/FairRootGroup/DDS/commit/e5b8ca86c46220238d130ac1f3f15dff32e85a2a
     # https://github.com/FairRootGroup/DDS/issues/305
