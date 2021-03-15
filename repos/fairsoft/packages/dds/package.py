@@ -20,6 +20,7 @@ class Dds(CMakePackage):
     maintainers = ['dennisklein', 'ChristianTackeGSI']
 
     version('develop', branch='master', get_full_repo=True)
+    version('3.5.10', tag='3.5.10', commit='a3e15b32c8c090afc676da015e8b6e4bc29aeb4e', no_cache=True)
     version('3.5.9', tag='3.5.9', commit='2868c2340f688b3045f2d6a73655b71b435bf6ab', no_cache=True)
     version('3.5.8', tag='3.5.8', commit='fcb0ad1f0e74f18a067a8c1295ae159c7f8a7b68', no_cache=True)
     version('3.5.7', tag='3.5.7', commit='a2aad21ed019a7b7ae064af3f1f9d89e984d19fb', no_cache=True)

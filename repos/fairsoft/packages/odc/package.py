@@ -17,6 +17,7 @@ class Odc(CMakePackage):
     generator = 'Ninja'
 
     version('develop', branch='master', get_full_repo=True)
+    version('0.18', tag='0.18', commit='02be2c613f7e794cac9fbbdb0af22e9dc5b59f4d', no_cache=True)
     version('0.16', tag='0.16', commit='b3adfb2343e182be4507097a58f21f998a551e52', no_cache=True)
     version('0.14', tag='0.14', commit='5a8b0dcdd6ea87341e036819656f6e8cd4ad1351', no_cache=True)
     version('0.12', tag='0.12', commit='27cb98e261513f4e5e35e943e98aa60c99016901', no_cache=True)
