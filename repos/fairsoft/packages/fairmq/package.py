@@ -88,7 +88,7 @@ class Fairmq(CMakePackage):
     depends_on('dds@2.4', when='@:1.4.9')
     depends_on('dds@2.5-odc', when='@1.4.10')
     depends_on('dds@3.0:', when='@1.4.11:1.4.26')
-    depends_on('dds@3.5.3:', when='@1.4.27:')
+    depends_on('dds@3.5.3: cxxstd=17', when='@1.4.27:')
     depends_on('flatbuffers', when='@1.4.9:')
     depends_on('pmix@2.1.4:', when='@1.4:')
 
