@@ -357,6 +357,8 @@ ExternalProject_Add(root
     "-Dvdt=OFF"
     "-Dxml=ON"
     "-Dxrootd=ON"
+    "-Dpythia6=ON"
+    "-Dpythia8=ON"
     "-Dx11=${root_x11}"
     ${cmake_python_config}
     ${cmake_python_config_old}
