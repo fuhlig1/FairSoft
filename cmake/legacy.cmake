@@ -370,9 +370,16 @@ endif()
 if(APPLE)
   set(root_cocoa "-Dcocoa=ON")
   set(root_x11 OFF)
+  find_package(nlohmann_json 3.9)
+  if(nlohmann_json_FOUND)
+    set(lohmann_json "-Dbuiltin_nlohmannjson=OFF")
+  else()
+    set(lohmann_json "-Dbuiltin_nlohmannjson=ON")
+  endif()
 else()
   unset(root_cocoa)
   set(root_x11 ON)
+  set(lohmann_json "-Dbuiltin_nlohmannjson=ON")
 endif()
 ExternalProject_Add(root
   GIT_REPOSITORY https://github.com/root-project/root/ GIT_TAG v${root_version_gittag}
@@ -380,7 +387,7 @@ ExternalProject_Add(root
   ${CMAKE_DEFAULT_ARGS} CMAKE_ARGS
     "-Daqua=ON"
     "-Dasimage=ON"
-    "-Dbuiltin_nlohmannjson=ON"
+    ${lohmann_json}
     "-Dcintex=OFF"
     "-Ddavix=OFF"
     "-Dfftw3=ON"
