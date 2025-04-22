@@ -324,9 +324,9 @@ else()
 endif()
 
 list(APPEND packages vecgeom)
-set(vecgeom_version "1.2.10")
+set(vecgeom_version "aba07860a2f5f4fd988d5b455e08ba63182d0bfd")
 ExternalProject_Add(vecgeom
-  GIT_REPOSITORY https://gitlab.cern.ch/VecGeom/VecGeom GIT_TAG v${vecgeom_version}
+  GIT_REPOSITORY https://gitlab.cern.ch/VecGeom/VecGeom GIT_TAG ${vecgeom_version}
   ${CMAKE_DEFAULT_ARGS} CMAKE_ARGS
     "-DVECGEOM_BACKEND=vc"
     "-DVECGEOM_BUILTIN_VECCORE=ON"
