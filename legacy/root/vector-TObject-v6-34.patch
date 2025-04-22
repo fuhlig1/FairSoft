@@ -1,0 +1,41 @@
+diff --git a/tree/ntuple/v7/inc/ROOT/RField.hxx b/tree/ntuple/v7/inc/ROOT/RField.hxx
+index 525b512fa5..de78aaaf76 100644
+--- a/tree/ntuple/v7/inc/ROOT/RField.hxx
++++ b/tree/ntuple/v7/inc/ROOT/RField.hxx
+@@ -425,6 +425,7 @@ protected:
+ 
+    std::size_t AppendImpl(const void *from) final;
+    void ReadGlobalImpl(NTupleSize_t globalIndex, void *to) final;
++   void ReadInClusterImpl(RClusterIndex clusterIndex, void *to) final;
+ 
+    void OnConnectPageSource() final;
+ 
+diff --git a/tree/ntuple/v7/src/RField.cxx b/tree/ntuple/v7/src/RField.cxx
+index 7aacf27298..4657e74644 100644
+--- a/tree/ntuple/v7/src/RField.cxx
++++ b/tree/ntuple/v7/src/RField.cxx
+@@ -2060,6 +2060,24 @@ void ROOT::Experimental::RField<TObject>::ReadGlobalImpl(NTupleSize_t globalInde
+    *reinterpret_cast<UInt_t *>(reinterpret_cast<unsigned char *>(to) + GetOffsetBits()) = bits;
+ }
+ 
++void ROOT::Experimental::RField<TObject>::ReadInClusterImpl(RClusterIndex clusterIndex, void *to)
++{
++   // Cf. TObject::Streamer()
++
++   auto *obj = static_cast<TObject *>(to);
++   if (obj->TestBit(TObject::kIsReferenced)) {
++      throw RException(R__FAIL("RNTuple I/O on referenced TObject is unsupported"));
++   }
++
++   CallReadOn(*fSubFields[0], clusterIndex, static_cast<unsigned char *>(to) + GetOffsetUniqueID());
++
++   const UInt_t bitIsOnHeap = obj->TestBit(TObject::kIsOnHeap) ? TObject::kIsOnHeap : 0;
++   UInt_t bits;
++   CallReadOn(*fSubFields[1], clusterIndex, &bits);
++   bits |= bitIsOnHeap | TObject::kNotDeleted;
++   *reinterpret_cast<UInt_t *>(reinterpret_cast<unsigned char *>(to) + GetOffsetBits()) = bits;
++}
++
+ void ROOT::Experimental::RField<TObject>::OnConnectPageSource()
+ {
+    if (GetTypeVersion() != 1) {
