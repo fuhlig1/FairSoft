@@ -446,6 +446,7 @@ list(APPEND packages geant3)
 set(geant3_version "4-4_fairsoft")
 ExternalProject_Add(geant3
   GIT_REPOSITORY https://github.com/FairRootGroup/geant3 GIT_TAG v${geant3_version}
+  PATCH_COMMAND ${patch} -p1 -i "${CMAKE_SOURCE_DIR}/legacy/geant3/fix_cmake.patch"
   ${CMAKE_DEFAULT_ARGS} CMAKE_ARGS
     "-DBUILD_GCALOR=ON"
   DEPENDS root vmc ${extract_source_cache_target}
@@ -463,7 +464,7 @@ ExternalProject_Add(vgm
 )
 
 list(APPEND packages geant4_vmc)
-set(geant4_vmc_version "6-7")
+set(geant4_vmc_version "6-7-p1")
 ExternalProject_Add(geant4_vmc
   GIT_REPOSITORY https://github.com/vmc-project/geant4_vmc GIT_TAG v${geant4_vmc_version}
   ${CMAKE_DEFAULT_ARGS} CMAKE_ARGS
