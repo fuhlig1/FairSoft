@@ -1,0 +1,26 @@
+diff --git a/geom/vecgeom/inc/TGeoVGShape.h b/geom/vecgeom/inc/TGeoVGShape.h
+index 7aa853dd92..2f06a73324 100644
+--- a/geom/vecgeom/inc/TGeoVGShape.h
++++ b/geom/vecgeom/inc/TGeoVGShape.h
+@@ -43,7 +43,7 @@ public:
+    static TGeoVGShape *Create(TGeoShape *shape);
+    Double_t Capacity() const override;
+    void ComputeBBox() override;
+-   void ComputeNormal(const Double_t *point, const Double_t *dir, Double_t *norm) override;
++   void ComputeNormal(const Double_t *point, const Double_t *dir, Double_t *norm) const override;
+    Bool_t Contains(const Double_t *point) const override;
+    Bool_t CouldBeCrossed(const Double_t *point, const Double_t *dir) const override
+    {
+diff --git a/geom/vecgeom/src/TGeoVGShape.cxx b/geom/vecgeom/src/TGeoVGShape.cxx
+index 0a5b88c10d..5c621a2d83 100644
+--- a/geom/vecgeom/src/TGeoVGShape.cxx
++++ b/geom/vecgeom/src/TGeoVGShape.cxx
+@@ -427,7 +427,7 @@ Double_t TGeoVGShape::Capacity() const
+ ////////////////////////////////////////////////////////////////////////////////
+ /// Normal computation.
+ 
+-void TGeoVGShape::ComputeNormal(const Double_t *point, const Double_t * /*dir*/, Double_t *norm)
++void TGeoVGShape::ComputeNormal(const Double_t *point, const Double_t * /*dir*/, Double_t *norm) const
+ {
+    vecgeom::cxx::Vector3D<Double_t> vnorm;
+    fVGShape->Normal(vecgeom::cxx::Vector3D<Double_t>(point[0], point[1], point[2]), vnorm);
