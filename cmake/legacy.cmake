@@ -301,12 +301,12 @@ ExternalProject_Add_Step(clhep move_dir DEPENDEES download DEPENDERS patch
 )
 
 list(APPEND packages pythia8)
-set(pythia8_version "8313")
+set(pythia8_version "8315")
 string(SUBSTRING "${pythia8_version}" 0 2 pythia8_major_version)
 string(TOUPPER "${CMAKE_BUILD_TYPE}" selected)
 ExternalProject_Add(pythia8
   URL https://pythia.org/download/pythia${pythia8_major_version}/pythia${pythia8_version}.tgz
-  URL_HASH SHA256=d07e801501c4dcb76d948dc63285375f597453c1d6ec65e71287603dc776718c
+  URL_HASH SHA256=4b2fe7341e33e90b7226fdcaa2a7bf9327987b3354e84c04f1fd9256863690ae
   BUILD_IN_SOURCE ON
   CONFIGURE_COMMAND ${CMAKE_BINARY_DIR}/Source/pythia8/configure
     "--with-hepmc2=${CMAKE_INSTALL_PREFIX}"
